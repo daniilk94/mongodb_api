@@ -1,0 +1,52 @@
+###
+# @name login
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "username": "jk",
+    "password": "sala"
+}
+
+###
+GET http://localhost:3000/data
+Authorization: Bearer {{login.response.body.access_token}}
+
+###
+GET http://localhost:3000/data/2
+Authorization: Bearer {{login.response.body.access_token}}
+
+###
+GET http://localhost:3000/data/users_records
+Authorization: Bearer {{login.response.body.access_token}}
+
+###
+POST http://localhost:3000/data
+Content-Type: application/json
+Authorization: Bearer {{login.response.body.access_token}}
+
+{
+    "id": "3",
+    "Firstname": "Peter",
+    "Surname": "Parker",
+    "userid": "jk"
+}
+
+###
+DELETE  http://localhost:3000/data/5
+Authorization: Bearer {{login.response.body.access_token}}
+
+### test PUT
+PUT http://localhost:3000/data/5
+Content-Type: application/json
+Authorization: Bearer {{login.response.body.access_token}}
+
+{
+    "Firstname": "Peter",
+    "Surname": "Parker",
+    "userid": "pl",
+    "id": 3
+}
+
+###
+GET http://localhost:3000/doc

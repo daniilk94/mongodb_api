@@ -1,17 +1,27 @@
 {
-  "name": "mariatomongo",
+  "name": "rest",
   "version": "1.0.0",
-  "description": "",
-  "main": "mariatomongo.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
+  "type": "module",
   "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
     "mariadb": "^3.4.5",
     "mongodb": "^7.1.0"
   },
-  "type": "module"
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "jsonwebtoken": "^9.0.3",
+    "nodemon": "^3.1.11",
+    "swagger-ui-express": "^5.0.1",
+    "yamljs": "^0.3.0"
+  }
 }

@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import 'dotenv/config';
-import { logonUsers } from '../db/db.js'
+import { logonUsers } from '../db/mongodb.js'
 
 const secret = process.env.MY_SECRET_KEY;
 

@@ -3,7 +3,7 @@ info:
   title: Karelia API Programming - OpenAPI 3.1.0 Demonstration
   description: |-
     This is a sample OpenAPI OAD.
-    
+
     Some useful links:
     - [Learn OpenAPI](https://learn.openapis.org)
     - [OpenAPI Specification](https://learn.openapis.org/)
@@ -19,9 +19,10 @@ info:
 security:
   - bearerAuth: []
 
+#  http://localhost:3000
 servers:
   - url: https://daniilu2404752.westeurope.cloudapp.azure.com
-  
+
 tags:
   - name: Sample dataset
     description: Everything you need to know about APIs
@@ -36,23 +37,23 @@ paths:
       description: Authenticates a user and returns a JWT access token
       tags:
         - Authentication
-      security: []   # override global bearerAuth
+      security: [] # override global bearerAuth
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/LoginRequest'
+              $ref: "#/components/schemas/LoginRequest"
       responses:
-        '200':
+        "200":
           description: Login successful
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/LoginResponse'
-        '400':
+                $ref: "#/components/schemas/LoginResponse"
+        "400":
           description: Missing credentials
-        '401':
+        "401":
           description: Login failed
   /data:
     get:
@@ -61,14 +62,14 @@ paths:
       summary: Returns a dataset
       description: Returns a dataset with something more specific...
       responses:
-        '200':
+        "200":
           description: Successful operation
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Data'
+                  $ref: "#/components/schemas/Data"
 components:
   schemas:
     LoginRequest:

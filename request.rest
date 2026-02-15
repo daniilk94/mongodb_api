@@ -9,11 +9,11 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3000/data
+GET http://localhost:3000/data/
 Authorization: Bearer {{login.response.body.access_token}}
 
 ###
-GET http://localhost:3000/data/2
+GET http://localhost:3000/data/1
 Authorization: Bearer {{login.response.body.access_token}}
 
 ###
@@ -26,26 +26,25 @@ Content-Type: application/json
 Authorization: Bearer {{login.response.body.access_token}}
 
 {
-    "id": "3",
+    "id": "4",
     "Firstname": "Peter",
     "Surname": "Parker",
     "userid": "jk"
 }
 
 ###
-DELETE  http://localhost:3000/data/5
+DELETE  http://localhost:3000/data/4
 Authorization: Bearer {{login.response.body.access_token}}
 
 ### test PUT
-PUT http://localhost:3000/data/5
+PUT http://localhost:3000/data/4
 Content-Type: application/json
 Authorization: Bearer {{login.response.body.access_token}}
 
 {
-    "Firstname": "Peter",
-    "Surname": "Parker",
-    "userid": "pl",
-    "id": 3
+    "Firstname": "Mary",
+    "Surname": "Poppins",
+    "userid": "pl"    
 }
 
 ###
